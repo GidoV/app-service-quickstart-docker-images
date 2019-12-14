@@ -37,3 +37,9 @@ stages:
         containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
           $(tag)
+- task: KubernetesManifest@0
+  inputs:
+    action: 'bake'
+    namespace: 'default'
+    helmChart: '$(Build.ArtifactStagingDirectory)'
+    releaseName: 'build'
