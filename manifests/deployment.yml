@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: gidovappservicequickstartdockerimages 
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: gidovappservicequickstartdockerimages 
+    spec:
+      containers:
+        - name: gidovappservicequickstartdockerimages 
+          image: gvkaks.azurecr.io/gidovappservicequickstartdockerimages
+          ports:
+          - containerPort: 2222
